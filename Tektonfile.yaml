@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: node-api-tekton
+spec:
+  resources:
+    - name: pipeline-git
+      resourceSpec:
+        type: git
+        params:
+          - name: revision
+            value: main
+          - name: url
+            value: https://github.com/kcs-faisalpathan/node_api.git
